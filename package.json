@@ -1,0 +1,10 @@
+{
+  "name": "graphql-experiments",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "webpack": "^5.10.0",
+    "typescript": "^4.1.2"
+  }
+}
