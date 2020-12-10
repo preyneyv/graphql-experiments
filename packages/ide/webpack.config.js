@@ -18,6 +18,7 @@ module.exports = {
         library: 'experimentsIDE',
         libraryTarget: 'umd',
         filename: isDev ? 'experiments-ide.js' : 'experiments-ide.min.js',
+        globalObject: 'this'
     },
     devtool: isDev ? 'eval-cheap-module-source-map' : 'source-map',
     externals: {
