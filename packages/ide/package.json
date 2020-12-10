@@ -1,5 +1,5 @@
 {
-  "name": "ide",
+  "name": "@graphql-experiments/ide",
   "version": "0.0.0",
   "description": "A visual query builder and experimentation platform for GraphQL.",
   "main": "src/index.ts",

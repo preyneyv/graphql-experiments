@@ -1,5 +1,5 @@
 {
-  "name": "editor",
+  "name": "@graphql-experiments/editor",
   "version": "0.0.0",
   "description": "A node-based drag-and-drop query builder for GraphQL",
   "main": "src/index.ts",
