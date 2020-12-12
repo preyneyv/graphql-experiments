@@ -1,6 +1,8 @@
-# Experiments IDE Monorepo
+![Experiments](resources/images/banner.png)
+### _A visual query builder and experimentation platform for GraphQL._
 > **Note:** This project is a work-in-progress and is not even in alpha. Using
 > it at its current state is not recommended.
+---
 ## Overview
 
 *Experiments IDE* is a visual query builder for GraphQL. It is a tool for
