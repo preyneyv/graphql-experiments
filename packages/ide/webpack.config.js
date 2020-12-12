@@ -1,5 +1,4 @@
 const path = require('path')
-const { WebpackPluginServe } = require('webpack-plugin-serve')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -14,7 +13,7 @@ module.exports = {
     entry: './src/cdn.tsx',
     context: rootPath(),
     output: {
-        path: rootPath(),
+        path: rootPath('umd'),
         library: 'experimentsIDE',
         libraryTarget: 'umd',
         filename: isDev ? 'experiments-ide.js' : 'experiments-ide.min.js',
@@ -25,11 +24,17 @@ module.exports = {
         react: 'React',
         'react-dom': 'ReactDOM',
     },
+    resolve: {
+        extensions: [ '.js', '.jsx', '.json', '.ts', '.tsx' ],
+        fallback: {
+            "assert": false
+        }
+    },
     module: {
         rules: [
             {
                 test: /\.(js|jsx|ts|tsx)$/,
-                use: [{ loader: 'babel-loader' }],
+                use: [ { loader: 'babel-loader' } ],
                 exclude: /\.(d\.ts|d\.ts\.map|spec\.tsx)$/
             },
             {
@@ -43,12 +48,8 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: isHMR,
-                        },
-                    },
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
                 ]
             },
         ]
@@ -58,7 +59,7 @@ module.exports = {
             template: rootPath('resources', 'index.html'),
             inject: 'head',
             scriptLoading: 'blocking',
-            filename: isDev ? 'index.html' : 'index.min.html'
+            filename: (isDev && !isHMR) ? 'dev.html' : 'index.html'
         }),
         new MiniCssExtractPlugin({
             filename: isDev ? 'experiments-ide.css' : 'experiments-ide.min.css',

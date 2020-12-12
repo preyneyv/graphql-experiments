@@ -1,7 +1,5 @@
-import './style.scss'
+// import './css/style.scss'
+import 'codemirror/lib/codemirror.css'
+// import 'codemirror/theme/material.css'
 
-import React from 'react'
-
-export const App = () => {
-    return <h1>Hello from Pranav!</h1>
-}
+export { ExperimentsIDE } from './components/experiments-ide'

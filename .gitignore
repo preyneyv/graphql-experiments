@@ -12,8 +12,7 @@ packages/*/lib
 packages/**/dist/.gitignore
 packages/**/dist/.npmignore
 dist
-esm
-bundle
+umd
 **/tsconfig.tsbuildinfo
 **/*.tsbuildinfo
 
