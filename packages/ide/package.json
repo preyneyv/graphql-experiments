@@ -12,8 +12,11 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-typescript": "^7.12.1",
     "@babel/preset-env": "^7.12.10",
     "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/classnames": "^2.2.11",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "babel-loader": "^8.2.2",
@@ -49,9 +52,13 @@
     "dev": "yarn clean-bundles && cross-env NODE_ENV=development yarn webpack serve"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "class-names": "^1.0.0",
+    "classnames": "^2.2.6",
     "codemirror": "^5.58.3",
-    "graphql": "^15.4.0",
     "codemirror-graphql": "^0.13.0",
+    "graphql": "^15.4.0",
     "react-codemirror2": "^7.2.1"
   }
 }
